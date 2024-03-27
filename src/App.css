@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  padding: 10px 7%;
+}
+
+.main__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+
+.main__header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.main__header .logo img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.main__header .logo p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.searchIcon {
+  scale: 1.5;
+}
+
+.route__navs ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.route__navs ul li {
+  width: 50%;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.route__navs ul li:nth-child(2) {
+  /* text-align: right; */
+  border-left: 2px solid black;
+}
+
+.route__navs ul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.filters ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.filters ul li {
+  width: 33.33%;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 2px solid black;
+}
+
+.filters ul li:nth-child(2) {
+  border: solid black;
+  border-width: 0 2px 2px;
+}
+
+.filters ul li a {
+  text-decoration: none;
+  color: inherit;
+}
