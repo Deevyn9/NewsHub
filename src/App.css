@@ -39,6 +39,7 @@ header {
 
 .searchIcon {
   scale: 1.5;
+  cursor: pointer;
 }
 
 .route__navs ul {
