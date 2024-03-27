@@ -1,10 +1,11 @@
-import React from "react";
+// import React from "react";
 import Logo from "../assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link, Outlet } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ handleOpenSearch }) => {
   return (
-    <div>
+    <>
       <header>
         <div className="main__header">
           <div className="logo">
@@ -13,35 +14,39 @@ const Header = () => {
           </div>
 
           <div className="searchBar">
-            <SearchIcon className="searchIcon" />
+            <SearchIcon
+              className="searchIcon"
+              onClick={() => handleOpenSearch()}
+            />
           </div>
         </div>
 
         <div className="route__navs">
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <a href="#">For You</a>
+              <Link to={"/foryou"}>For You</Link>
             </li>
           </ul>
         </div>
         <div className="filters">
           <ul>
             <li>
-              <a href="#">Filter</a>
+              <a href="#">Categories</a>
             </li>
             <li>
-              <a href="#">Filter</a>
+              <a href="#">Authors</a>
             </li>
             <li>
-              <a href="#">Filter</a>
+              <a href="#">Date</a>
             </li>
           </ul>
         </div>
       </header>
-    </div>
+      <Outlet />
+    </>
   );
 };
 
