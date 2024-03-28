@@ -9,10 +9,16 @@
 body {
   width: 100vw;
   font-family: "Inter", sans-serif;
+  position: relative;
+  background-color: rgb(42, 43, 46);
+  color: rgb(189, 193, 198);
 }
 
 header {
-  padding: 10px 7%;
+  padding: 10px 7% 0;
+  position: relative;
+  z-index: 3;
+  background-color: rgb(32, 33, 36);
 }
 
 .main__header {
@@ -77,6 +83,7 @@ header {
   text-align: center;
   padding: 15px 0;
   border-bottom: 2px solid black;
+  cursor: pointer;
 }
 
 .filters ul li:nth-child(2) {
@@ -87,4 +94,77 @@ header {
 .filters ul li a {
   text-decoration: none;
   color: inherit;
+}
+
+.searchModal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(32, 33, 36);
+  padding: 15px 8%;
+  right: -100vw;
+  transition: all 0.3s ease-in-out;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchModal.active {
+  right: 0;
+}
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.search-header .input-area {
+  background-color: rgb(42, 43, 46);
+  width: 70%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.search-header .input-area .modal-searchicon {
+  scale: 1.2;
+  margin: 0 15px;
+}
+
+.search-header .input-area input {
+  height: 100%;
+  width: 94%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgb(189, 193, 198);
+  font-size: 17px;
+  padding-right: 15px;
+}
+
+.search-header .input-area input::placeholder {
+  color: rgb(189, 193, 198);
+  font-weight: 500;
+}
+
+.backArrow {
+  cursor: pointer;
+  scale: 1.5;
+}
+
+.filter-modal {
+  position: absolute;
+  background-color: rgb(32, 33, 36);
+  top: -100vh;
+  width: 100vw;
+  height: calc(100vh - 160px);
+  transition: 0.3s all ease-in-out;
+  z-index: 2;
+}
+
+.filter-modal.active {
+  top: 160px;
 }
