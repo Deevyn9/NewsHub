@@ -2,8 +2,14 @@
 import Logo from "../assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link, Outlet } from "react-router-dom";
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
-const Header = ({ handleOpenSearch }) => {
+const Header = ({
+  handleOpenSearch,
+  handleToggleCategoriesModal,
+  handleToggleSourcesModal,
+  handleToggleDateModal,
+}) => {
   return (
     <>
       <header>
@@ -33,15 +39,9 @@ const Header = ({ handleOpenSearch }) => {
         </div>
         <div className="filters">
           <ul>
-            <li>
-              <a href="#">Categories</a>
-            </li>
-            <li>
-              <a href="#">Authors</a>
-            </li>
-            <li>
-              <a href="#">Date</a>
-            </li>
+            <li onClick={() => handleToggleCategoriesModal()}>Categories</li>
+            <li onClick={() => handleToggleSourcesModal()}>Authors</li>
+            <li onClick={() => handleToggleDateModal()}>Date</li>
           </ul>
         </div>
       </header>
