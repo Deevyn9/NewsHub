@@ -48,6 +48,9 @@ function App() {
           handleToggleCategoriesModal={handleToggleCategoriesModal}
           handleToggleSourcesModal={handleToggleSourcesModal}
           handleToggleDateModal={handleToggleDateModal}
+          toggleCategoriesModal={toggleCategoriesModal}
+          toggleSourcesModal={toggleSourcesModal}
+          toggleDateModal={toggleDateModal}
         />
         <Routes>
           <Route path="/" element={<Home />} />
