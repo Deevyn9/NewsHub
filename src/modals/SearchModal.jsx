@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 
-const SearchModal = ({ openSearchModal, handleCloseSearch }) => {
+const SearchModal = ({ openSearchModal, handleCloseSearch, handleSearch }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchQueryChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch(searchQuery);
+    }
+  };
+
   return (
     <div className={`searchModal ${openSearchModal && "active"}`}>
       <div className="search-header">
@@ -17,6 +29,9 @@ const SearchModal = ({ openSearchModal, handleCloseSearch }) => {
           <input
             type="text"
             placeholder="Search for topics, locations & sources"
+            value={searchQuery}
+            onChange={handleSearchQueryChange}
+            onKeyDown={handleKeyDown}
           />
         </div>
       </div>
