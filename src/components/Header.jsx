@@ -2,17 +2,8 @@
 import Logo from "../assets/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link, Outlet } from "react-router-dom";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-const Header = ({
-  handleOpenSearch,
-  handleToggleCategoriesModal,
-  toggleCategoriesModal,
-  handleToggleSourcesModal,
-  toggleSourcesModal,
-  handleToggleDateModal,
-  toggleDateModal,
-}) => {
+const Header = ({ handleOpenSearch }) => {
   return (
     <>
       <header>
@@ -37,30 +28,6 @@ const Header = ({
             </li>
             <li>
               <Link to={"/foryou"}>For You</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="filters">
-          <ul>
-            <li onClick={() => handleToggleCategoriesModal()}>
-              <p>Categories</p>
-              <ArrowDropDownIcon
-                className={`dropdown-arrow ${
-                  toggleCategoriesModal && "active"
-                }`}
-              />
-            </li>
-            <li onClick={() => handleToggleSourcesModal()}>
-              <p>Sources</p>
-              <ArrowDropDownIcon
-                className={`dropdown-arrow ${toggleSourcesModal && "active"}`}
-              />
-            </li>
-            <li onClick={() => handleToggleDateModal()}>
-              <p>Date</p>
-              <ArrowDropDownIcon
-                className={`dropdown-arrow ${toggleDateModal && "active"}`}
-              />
             </li>
           </ul>
         </div>
