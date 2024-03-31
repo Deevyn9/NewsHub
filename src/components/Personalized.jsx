@@ -1,6 +1,4 @@
-import React from "react";
-
-const Personalized = ({ personalizedFeed }) => {
+const Personalized = ({ personalizedFeed, formattedDate }) => {
   return (
     <div className="main-area">
       <div className="heading">
@@ -27,7 +25,9 @@ const Personalized = ({ personalizedFeed }) => {
               </div>
 
               <div className="name-date">
-                <div className="article-date">{article.publishedAt}</div>
+                <div className="article-date">
+                  {formattedDate(article.publishedAt)}
+                </div>
                 <div className="divider">•</div>
                 <div className="article-writer">{article.author}</div>
               </div>
