@@ -1,21 +1,17 @@
-import React, { useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SearchIcon from "@mui/icons-material/Search";
-import CloseIcon from "@mui/icons-material/Close";
 
-const SearchModal = ({ openSearchModal, handleCloseSearch, handleSearch }) => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearchQueryChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      handleSearch(searchQuery);
-    }
-  };
-
+const SearchModal = ({
+  openSearchModal,
+  handleCloseSearch,
+  handleSearch,
+  setSearchQuery,
+  setSelectedSource,
+  setSelectedCategory,
+  setSelectedDate,
+  handleUndoFilters,
+  undoFilters,
+}) => {
   return (
     <div className={`searchModal ${openSearchModal && "active"}`}>
       <div className="search-header">
@@ -28,91 +24,57 @@ const SearchModal = ({ openSearchModal, handleCloseSearch, handleSearch }) => {
           <SearchIcon className="modal-searchicon" />
           <input
             type="text"
-            placeholder="Search for topics, locations & sources"
-            value={searchQuery}
-            onChange={handleSearchQueryChange}
-            onKeyDown={handleKeyDown}
+            placeholder="Search for Keywords"
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
       </div>
 
-      <div className="modal-title">
-        <h2>Recent Searches</h2>
+      <div className="filter-source">
+        <label htmlFor="">Select Source</label>
+        <select
+          name="Sources"
+          onChange={(e) => setSelectedSource(e.target.value)}
+        >
+          <option value="all">all</option>
+          <option value="News API">News.org</option>
+          <option value="The Guardian">Guardian</option>
+          <option value="New York Times">New York Times</option>
+        </select>
       </div>
 
-      <div className="recent-searches">
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
-        <div className="search-log">
-          <div className="search-text">
-            <SearchIcon className="modal-searchicon" />
-            <p>Words</p>
-          </div>
-          <div className="delete-search">
-            <CloseIcon />
-          </div>
-        </div>
+      <div className="filter-categories">
+        <label htmlFor="">Filter Category</label>
+        <select
+          name="Category"
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          disabled
+        >
+          <option value="all">all</option>
+          <option value="Busines">Business</option>
+          <option value="Science">Science</option>
+          <option value="technology">Technology</option>
+          <option value="sports">Sports</option>
+          <option value="entertainment">Entertainment</option>
+        </select>
+      </div>
+
+      <div className="select-date">
+        <label htmlFor="date">Choose date</label>
+        <input
+          type="date"
+          name="date"
+          onChange={(e) => setSelectedDate(e.target.value)}
+        />
+      </div>
+
+      <div className="button-container">
+        {undoFilters && (
+          <button className="undo-button" onClick={handleUndoFilters}>
+            Undo Filters
+          </button>
+        )}
+        <button onClick={handleSearch}>Save Changes</button>
       </div>
     </div>
   );
