@@ -1,11 +1,44 @@
-import React from "react";
+const Home = ({ articles, addToPersonalized, formattedDate }) => {
+  function getCurrentDate() {
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const monthsOfYear = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
 
-const Home = ({ articles, addToPersonalized }) => {
+    const now = new Date();
+    const dayOfWeek = daysOfWeek[now.getDay()];
+    const dayOfMonth = now.getDate();
+    const monthOfYear = monthsOfYear[now.getMonth()];
+
+    return `${dayOfWeek}, ${dayOfMonth} ${monthOfYear}`;
+  }
+
+  const CurrentDate = getCurrentDate();
+
   return (
     <div className="main-area">
       <div className="heading">
         <h2>Your Briefing</h2>
-        <p>Tuesday, 26 March</p>
+        <p>{CurrentDate}</p>
       </div>
 
       <div className="news-container">
@@ -31,7 +64,9 @@ const Home = ({ articles, addToPersonalized }) => {
 
               <div className="article-card__bottom">
                 <div className="name-date">
-                  <div className="article-date">{article.publishedAt}</div>
+                  <div className="article-date">
+                    {formattedDate(article.publishedAt)}
+                  </div>
                   <div className="divider">•</div>
                   <div className="article-writer">{article.author}</div>
                 </div>
