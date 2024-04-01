@@ -16,10 +16,13 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDate, setSelectedDate] = useState("");
   const [undoFilters, setUndoFilters] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   const formattedDate = (dateString) => {
     const date = new Date(dateString);
-    return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+    return `${date.toLocaleDateString("en-GB")} ${date.toLocaleTimeString(
+      "en-GB"
+    )}`;
   };
 
   useEffect(() => {
@@ -95,6 +98,7 @@ function App() {
 
           setOriginalArticles(mergedArticles);
           setArticles(mergedArticles);
+          setLoader(false);
         } catch (error) {
           console.error("Error fetching home articles: ", error);
         }
@@ -187,6 +191,7 @@ function App() {
                 addToPersonalized={addToPersonalized}
                 handleSearch={handleSearch}
                 formattedDate={formattedDate}
+                loader={loader}
               />
             }
           />
