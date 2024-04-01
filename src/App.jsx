@@ -36,9 +36,9 @@ function App() {
     localStorage.setItem("personalizedFeed", JSON.stringify(personalizedFeed));
   }, [personalizedFeed]);
 
-  const newsapiKey = import.meta.env.REACT_APP_NEWS_API_KEY;
-  const guardianapikey = import.meta.env.REACT_APP_GUARDIAN_API_KEY;
-  const newyorktimesKey = import.meta.env.REACT_APP_NEW_YORK_API_KEY;
+  // const newsapiKey = import.meta.env.REACT_APP_NEWS_API_KEY;
+  // const guardianapikey = import.meta.env.REACT_APP_GUARDIAN_API_KEY;
+  // const newyorktimesKey = import.meta.env.REACT_APP_NEW_YORK_API_KEY;
 
   useEffect(() => {
     const fetchHomeArticles = async () => {
@@ -46,7 +46,7 @@ function App() {
         try {
           // Fetch data from API 1 (NewsApi)
           const response1 = await fetch(
-            `https://newsapi.org/v2/everything?q=everything&apiKey=${newsapiKey}`
+            `https://newsapi.org/v2/everything?q=everything&apiKey=19dfddc80d3744c1ad1d84e49d8a9850`
           );
           const data1 = await response1.json();
 
@@ -64,7 +64,7 @@ function App() {
 
           // Fetch data from API 2 ()
           const response2 = await fetch(
-            `https://content.guardianapis.com/search?page=2&q=everything&api-key=${guardianapikey}`
+            `https://content.guardianapis.com/search?page=2&q=everything&api-key=4e723067-5719-4e96-8cea-abb050191e47`
           );
           const data2 = await response2.json();
 
@@ -78,7 +78,7 @@ function App() {
 
           // Fetch data from API 3
           const response3 = await fetch(
-            `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${newyorktimesKey}`
+            `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=hcfnO1zKdhO0PXH8LthP5k0G02pGP1Tn`
           );
           const data3 = await response3.json();
 
@@ -106,7 +106,7 @@ function App() {
     };
 
     fetchHomeArticles();
-  }, [newsapiKey, guardianapikey, newyorktimesKey, originalArticles]);
+  }, [originalArticles]);
 
   const addToPersonalized = (article) => {
     // Update personalized feed in state
