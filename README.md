@@ -2,6 +2,13 @@
 
 NewsHub is a web application that aggregates news articles from various sources and presents them in an organized and user-friendly manner.
 
+# NewsHub
+
+![Main Page]([https://github.com/yourusername/newshub/raw/main/images/main_page.png](https://github.com/Deevyn9/NewsHub/blob/master/src/assets/snapshots/NewsHub%20Home.png))
+
+![Search Modal]([https://github.com/yourusername/newshub/raw/main/images/search_modal.png](https://github.com/Deevyn9/NewsHub/blob/master/src/assets/snapshots/NewsHub%20SearchModal.png))
+
+
 ## Local Setup
 
 To run NewsHub locally on your system, follow these steps:
