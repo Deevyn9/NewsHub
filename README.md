@@ -4,9 +4,9 @@ NewsHub is a web application that aggregates news articles from various sources 
 
 # NewsHub
 
-![Main Page]([https://github.com/yourusername/newshub/raw/main/images/main_page.png](https://github.com/Deevyn9/NewsHub/blob/master/src/assets/snapshots/NewsHub%20Home.png))
+![Main Page](https://github.com/Deevyn9/NewsHub/blob/master/src/assets/snapshots/NewsHub%20Home.png)
 
-![Search Modal]([https://github.com/yourusername/newshub/raw/main/images/search_modal.png](https://github.com/Deevyn9/NewsHub/blob/master/src/assets/snapshots/NewsHub%20SearchModal.png))
+![Search Modal](https://github.com/Deevyn9/NewsHub/blob/master/src/assets/snapshots/NewsHub%20SearchModal.png)
 
 
 ## Local Setup
