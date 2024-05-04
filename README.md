@@ -37,12 +37,4 @@ To run NewsHub locally on your system, follow these steps:
    npm run dev
    ```
 
-5. Open your web browser and visit [http://localhost:5173](http://localhost:5173) to view NewsHub.
-
-## Docker Containerization (Issue Under Investigation)
-
-Please note that there was an issue with containerizing NewsHub using Docker. Efforts are underway to resolve this issue, Please run NewsHub locally as described above. The Docker containerization process is encountering port binding issues, preventing the application from running smoothly in a Docker container. This issue is being actively addressed.
-
-## Filtering by Categories
-
-Please note that the filtering feature by categories has been disabled in this version of NewsHub. This decision was made due to limitations in the APIs selected for aggregating news articles. Some of the APIs do not provide support for filtering articles by categories.
+5. Open your web browser and visit [http://localhost:5173](http://localhost:5173) to view 
